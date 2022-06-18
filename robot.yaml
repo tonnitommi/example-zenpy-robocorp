@@ -1,0 +1,11 @@
+tasks:
+  Create Zendesk Ticket:
+    robotTaskName: Create Zendesk Ticket
+condaConfigFile: conda.yaml
+ignoreFiles:
+- .gitignore
+artifactsDir: output
+PATH:
+- .
+PYTHONPATH:
+- .
