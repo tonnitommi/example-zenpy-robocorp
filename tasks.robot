@@ -9,7 +9,11 @@ Create Zendesk Ticket
     ${client}=    Login Zendesk    ${zendesk}[email]    ${zendesk}[token]    ${zendesk}[subdomain]
     
     Log To Console    Creating a ticket in Zendesk
-    Create Ticket
+    ${result}=    Create Ticket
     ...    ${client}
     ...    Subject is something
     ...    Description is much more than that
+    ...    tommi@robocorp.com
+    ...    Tommi Holmgren
+
+    Log To Console    ${result}
