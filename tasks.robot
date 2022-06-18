@@ -1,6 +1,6 @@
 *** Settings ***
 Library     RPA.Robocorp.Vault
-Library     zendesk-helper
+Library     ZendeskLibrary
 
 *** Tasks ***
 Create Zendesk Ticket
