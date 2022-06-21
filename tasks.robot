@@ -9,7 +9,7 @@ Create Zendesk Ticket
     ${result}=    Create Ticket
     ...    Subject is something nr 2
     ...    Description is much more than that
-    ...    tommi+demo1@robocorp.com
+    ...    some-email@exmaple.com
     ...    Tommi Demo
 
     Log To Console    ${result}
