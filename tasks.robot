@@ -1,19 +1,21 @@
 *** Settings ***
 Library     RPA.Robocorp.Vault
 Library     ZendeskLibrary
+Task Setup    Authorize Zendesk
 
 *** Tasks ***
 Create Zendesk Ticket
-    Log To Console    Create Zendesk Creds
-    ${zendesk}=    Get Secret    Zendesk
-    ${client}=    Login Zendesk    ${zendesk}[email]    ${zendesk}[token]    ${zendesk}[subdomain]
-    
     Log To Console    Creating a ticket in Zendesk
     ${result}=    Create Ticket
-    ...    ${client}
-    ...    Subject is something
+    ...    Subject is something nr 2
     ...    Description is much more than that
-    ...    tommi@robocorp.com
-    ...    Tommi Holmgren
+    ...    tommi+demo1@robocorp.com
+    ...    Tommi Demo
 
     Log To Console    ${result}
+
+*** Keywords ***
+Authorize Zendesk
+    Log To Console    Create Zendesk Creds
+    ${secrets}=    Get Secret    Zendesk
+    Auth With Token    ${secrets}[email]    ${secrets}[token]    ${secrets}[subdomain]
